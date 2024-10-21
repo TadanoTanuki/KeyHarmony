@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ショートカットキー一覧</title>
+  <style>
+    .hidden { display: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f2f2f2; }
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>ショートカットキー一覧</h1>
+
+<h5>装飾キー</h5>
+<label><input type="checkbox" id="none" onchange="filter()">装飾無し</label>
+<label><input type="checkbox" id="ctrl" onchange="filter()">Ctrl</label>
+<label><input type="checkbox" id="shift" onchange="filter()">Shift</label>
+<label><input type="checkbox" id="alt" onchange="filter()">Alt</label>
+<label><input type="checkbox" id="win" onchange="filter()">Win</label>
+
+<h5>ファンクションキー & システムキー</h5>
+<label><input type="checkbox" id="esc" onchange="filter()">Esc</label>
+<label><input type="checkbox" id="f1" onchange="filter()">F1</label>
+<label><input type="checkbox" id="f2" onchange="filter()">F2</label>
+<label><input type="checkbox" id="f3" onchange="filter()">F3</label>
+<label><input type="checkbox" id="f4" onchange="filter()">F4</label>
+<label><input type="checkbox" id="f5" onchange="filter()">F5</label>
+<label><input type="checkbox" id="f6" onchange="filter()">F6</label>
+<label><input type="checkbox" id="f7" onchange="filter()">F7</label>
+<label><input type="checkbox" id="f8" onchange="filter()">F8</label>
+<label><input type="checkbox" id="f9" onchange="filter()">F9</label>
+<label><input type="checkbox" id="f10" onchange="filter()">F10</label>
+<label><input type="checkbox" id="f11" onchange="filter()">F11</label>
+<label><input type="checkbox" id="f12" onchange="filter()">F12</label>
+<label><input type="checkbox" id="printscreen" onchange="filter()">Print Screen</label>
+<label><input type="checkbox" id="pause" onchange="filter()">Pause</label>
+<label><input type="checkbox" id="insert" onchange="filter()">Insert</label>
+
+<h5>文字キー</h5>
+<label><input type="checkbox" id="1" onchange="filter()">1</label>
+<label><input type="checkbox" id="2" onchange="filter()">2</label>
+<label><input type="checkbox" id="3" onchange="filter()">3</label>
+<label><input type="checkbox" id="4" onchange="filter()">4</label>
+<label><input type="checkbox" id="5" onchange="filter()">5</label>
+<label><input type="checkbox" id="6" onchange="filter()">6</label>
+<label><input type="checkbox" id="7" onchange="filter()">7</label>
+<label><input type="checkbox" id="8" onchange="filter()">8</label>
+<label><input type="checkbox" id="9" onchange="filter()">9</label>
+<label><input type="checkbox" id="0" onchange="filter()">0</label>
+<label><input type="checkbox" id="a" onchange="filter()">A</label>
+<label><input type="checkbox" id="b" onchange="filter()">B</label>
+<label><input type="checkbox" id="c" onchange="filter()">C</label>
+<label><input type="checkbox" id="d" onchange="filter()">D</label>
+<label><input type="checkbox" id="e" onchange="filter()">E</label>
+<label><input type="checkbox" id="f" onchange="filter()">F</label>
+<label><input type="checkbox" id="g" onchange="filter()">G</label>
+<label><input type="checkbox" id="h" onchange="filter()">H</label>
+<label><input type="checkbox" id="i" onchange="filter()">I</label>
+<label><input type="checkbox" id="j" onchange="filter()">J</label>
+<label><input type="checkbox" id="k" onchange="filter()">K</label>
+<label><input type="checkbox" id="l" onchange="filter()">L</label>
+<label><input type="checkbox" id="m" onchange="filter()">M</label>
+<label><input type="checkbox" id="n" onchange="filter()">N</label>
+<label><input type="checkbox" id="o" onchange="filter()">O</label>
+<label><input type="checkbox" id="p" onchange="filter()">P</label>
+<label><input type="checkbox" id="q" onchange="filter()">Q</label>
+<label><input type="checkbox" id="r" onchange="filter()">R</label>
+<label><input type="checkbox" id="s" onchange="filter()">S</label>
+<label><input type="checkbox" id="t" onchange="filter()">T</label>
+<label><input type="checkbox" id="u" onchange="filter()">U</label>
+<label><input type="checkbox" id="v" onchange="filter()">V</label>
+<label><input type="checkbox" id="w" onchange="filter()">W</label>
+<label><input type="checkbox" id="x" onchange="filter()">X</label>
+<label><input type="checkbox" id="y" onchange="filter()">Y</label>
+<label><input type="checkbox" id="z" onchange="filter()">Z</label>
+
+<h5>ナビゲーションキー</h5>
+<label><input type="checkbox" id="home" onchange="filter()">Home</label>
+<label><input type="checkbox" id="end" onchange="filter()">End</label>
+<label><input type="checkbox" id="pageup" onchange="filter()">Page Up</label>
+<label><input type="checkbox" id="pagedown" onchange="filter()">Page Down</label>
+<label><input type="checkbox" id="leftarrow" onchange="filter()">←</label>
+<label><input type="checkbox" id="uparrow" onchange="filter()">↑</label>
+<label><input type="checkbox" id="rightarrow" onchange="filter()">→</label>
+<label><input type="checkbox" id="downarrow" onchange="filter()">↓</label>
+
+<label><input type="checkbox" id="tab" onchange="filter()">Tab</label>
+<label><input type="checkbox" id="space" onchange="filter()">Space</label>
+<label><input type="checkbox" id="enter" onchange="filter()">Enter</label>
+<label><input type="checkbox" id="convert" onchange="filter()">変換</label>
+<label><input type="checkbox" id="nonconvert" onchange="filter()">無変換</label>
+
+<label><input type="checkbox" id="minus" onchange="filter()">－</label>
+<label><input type="checkbox" id="caret" onchange="filter()">＾</label>
+<label><input type="checkbox" id="at" onchange="filter()">＠</label>
+<label><input type="checkbox" id="leftbracket" onchange="filter()">［</label>
+<label><input type="checkbox" id="rightbracket" onchange="filter()">］</label>
+<label><input type="checkbox" id="colon" onchange="filter()">；</label>
+<label><input type="checkbox" id="semicolon" onchange="filter()">：</label>
+<label><input type="checkbox" id="comma" onchange="filter()">，</label>
+<label><input type="checkbox" id="dot" onchange="filter()">．</label>
+<label><input type="checkbox" id="slash" onchange="filter()">／</label>
+<label><input type="checkbox" id="backslash" onchange="filter()">￥</label>
+
+
+<p id="imput-mode">検索モード：key</p>
+  
+    <!-- Appフィルター -->
+    <label for="app-filter">アプリ:</label>
+    <select id="app-filter" onchange="filter()">
+      <option value="all">　</option>
+      <option value="Windows">Windows</option>
+      <option value="VSCode">VSCode</option>
+    </select>
+  
+  <!-- 重要度フィルター -->
+  <label for="importance-filter">重要:</label>
+  <select id="importance-filter" onchange="filter()">
+    <option value="all">　</option>
+    <option value="star">★のみ</option>
+    <option value="none">未入力のみ</option>
+  </select>
+  
+    <!-- 修得状況フィルター -->
+  <label for="status-filter">習得:</label>
+  <select id="status-filter" onchange="filter()">
+    <option value="all">　</option>
+    <option value="checked">✓のみ</option>
+    <option value="none">未入力のみ</option>
+  </select>
+
+<table id="shortcutTable">
+  <thead>
+    <tr>
+      <th>内容についての説明</th>
+      <th>装飾キー</th>
+      <th>キー</th>
+      <th>2nd</th>
+      <th>アプリ</th>
+      <th>習得</th>
+      <th>重要</th>
+      <th>タグ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- ショートカットキー一覧 -->
+    <tr class="ctrl">
+      <td>コピー</td>
+      <td>Ctrl</td>
+      <td>C</td>
+      <td></td>
+      <td>Windows</td>
+      <td>✓</td>
+      <td>★</td>
+      <td>編集</td>
+    </tr>
+    <tr class="shift">
+      <td>検索</td>
+      <td>Shift</td>
+      <td>－</td>
+      <td></td>
+      <td>VSCode</td>
+      <td></td>
+      <td></td>
+      <td>ナビゲーション</td>
+    </tr>
+    <tr class="alt">
+      <td>ウィンドウを切り替え</td>
+      <td>Alt</td>
+      <td>Tab</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="win">
+      <td>スタートメニューを開く</td>
+      <td>Win</td>
+      <td></td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="ctrl shift">
+      <td>名前を付けて保存</td>
+      <td>Ctrl + Shift</td>
+      <td>S</td>
+      <td></td>
+      <td>VSCode</td>
+      <td></td>
+      <td></td>
+      <td>エディタ</td>
+    </tr>
+    <tr class="ctrl alt">
+      <td>新しいタブを開く</td>
+      <td>Ctrl + Alt</td>
+      <td>T</td>
+      <td></td>
+      <td>ブラウザ</td>
+      <td></td>
+      <td></td>
+      <td>ナビゲーション</td>
+    </tr>
+    <tr class="ctrl win">
+      <td>スクリーンショット</td>
+      <td>Ctrl + Win</td>
+      <td>S</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="shift alt">
+      <td>特殊文字入力</td>
+      <td>Shift + Alt</td>
+      <td>U</td>
+      <td></td>
+      <td>Linux</td>
+      <td></td>
+      <td></td>
+      <td>入力</td>
+    </tr>
+    <tr class="shift win">
+      <td>新しいデスクトップ</td>
+      <td>Shift + Win</td>
+      <td>D</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="alt win">
+      <td>エクスプローラを開く</td>
+      <td>Alt + Win</td>
+      <td>E</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="ctrl shift alt">
+      <td>システム情報を表示</td>
+      <td>Ctrl + Shift + Alt</td>
+      <td>I</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="ctrl shift win">
+      <td>仮想デスクトップを切り替え</td>
+      <td>Ctrl + Shift + Win</td>
+      <td>↑</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="ctrl alt win">
+      <td>設定を開く</td>
+      <td>Ctrl + Alt + Win</td>
+      <td>O</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr class="shift alt win">
+      <td>アクティビティを表示</td>
+      <td>Shift + Alt + Win</td>
+      <td>A</td>
+      <td></td>
+      <td>Linux</td>
+      <td></td>
+      <td></td>
+      <td>ナビゲーション</td>
+    </tr>
+    <tr class="ctrl shift alt win">
+      <td>全画面キャプチャ</td>
+      <td>Ctrl + Shift + Alt + Win</td>
+      <td>P</td>
+      <td></td>
+      <td>Windows</td>
+      <td></td>
+      <td></td>
+      <td>システム</td>
+    </tr>
+    <tr>
+      <td>上書き保存</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>VSCode</td>
+      <td>✓</td>
+      <td>★</td>
+      <td>エディタ</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+    let currentFilter = "key"; "key", "app", "importance", "status"
+
+  function filter() {
+    
+    //装飾キー
+    const noneChecked = document.getElementById("none").checked;
+    const ctrlChecked = document.getElementById("ctrl").checked;
+    const shiftChecked = document.getElementById("shift").checked;
+    const altChecked = document.getElementById("alt").checked;
+    const winChecked = document.getElementById("win").checked;
+    
+    // ファンクションキー & システムキー
+    const esc = document.getElementById("esc").checked;
+    const f1 = document.getElementById("f1").checked;
+    const f2 = document.getElementById("f2").checked;
+    const f3 = document.getElementById("f3").checked;
+    const f4 = document.getElementById("f4").checked;
+    const f5 = document.getElementById("f5").checked;
+    const f6 = document.getElementById("f6").checked;
+    const f7 = document.getElementById("f7").checked;
+    const f8 = document.getElementById("f8").checked;
+    const f9 = document.getElementById("f9").checked;
+    const f10 = document.getElementById("f10").checked;
+    const f11 = document.getElementById("f11").checked;
+    const f12 = document.getElementById("f12").checked;
+    const printscreen = document.getElementById("printscreen").checked;
+    const pause = document.getElementById("pause").checked;
+    const insert = document.getElementById("insert").checked;
+
+    //数字
+    const num1 = document.getElementById("1").checked;
+    const num2 = document.getElementById("2").checked;
+    const num3 = document.getElementById("3").checked;
+    const num4 = document.getElementById("4").checked;
+    const num5 = document.getElementById("5").checked;
+    const num6 = document.getElementById("6").checked;
+    const num7 = document.getElementById("7").checked;
+    const num8 = document.getElementById("8").checked;
+    const num9 = document.getElementById("9").checked;
+    const num0 = document.getElementById("0").checked;
+
+    //文字
+    const a = document.getElementById("a").checked;
+    const b = document.getElementById("b").checked;
+    const c = document.getElementById("c").checked;
+    const d = document.getElementById("d").checked;
+    const e = document.getElementById("e").checked;
+    const f = document.getElementById("f").checked;
+    const g = document.getElementById("g").checked;
+    const h = document.getElementById("h").checked;
+    const i = document.getElementById("i").checked;
+    const j = document.getElementById("j").checked;
+    const k = document.getElementById("k").checked;
+    const l = document.getElementById("l").checked;
+    const m = document.getElementById("m").checked;
+    const n = document.getElementById("n").checked;
+    const o = document.getElementById("o").checked;
+    const p = document.getElementById("p").checked;
+    const q = document.getElementById("q").checked;
+    const r = document.getElementById("r").checked;
+    const s = document.getElementById("s").checked;
+    const t = document.getElementById("t").checked;
+    const u = document.getElementById("u").checked;
+    const v = document.getElementById("v").checked;
+    const w = document.getElementById("w").checked;
+    const x = document.getElementById("x").checked;
+    const y = document.getElementById("y").checked;
+    const z = document.getElementById("z").checked;
+
+    // ナビゲーションキー
+    const home = document.getElementById("home").checked;
+    const end = document.getElementById("end").checked;
+    const pageup = document.getElementById("pageup").checked;
+    const pagedown = document.getElementById("pagedown").checked;
+    const leftarrow = document.getElementById("leftarrow").checked;
+    const uparrow = document.getElementById("uparrow").checked;
+    const rightarrow = document.getElementById("rightarrow").checked;
+    const downarrow = document.getElementById("downarrow").checked;
+    
+    const tab = document.getElementById("tab").checked;
+    const space = document.getElementById("space").checked;
+    const enter = document.getElementById("enter").checked;
+    const convert = document.getElementById("convert").checked;
+    const nonconvert = document.getElementById("nonconvert").checked;
+
+    const minus = document.getElementById("minus").checked;
+    const caret = document.getElementById("caret").checked;
+    const at = document.getElementById("at").checked;
+    const leftbracket = document.getElementById("leftbracket").checked;
+    const rightbracket = document.getElementById("rightbracket").checked;
+    const colon = document.getElementById("colon").checked;
+    const semicolon = document.getElementById("semicolon").checked;
+    const comma = document.getElementById("comma").checked;
+    const dot = document.getElementById("dot").checked;
+    const slash = document.getElementById("slash").checked;
+    const backslash = document.getElementById("backslash").checked;
+
+
+//その他のフィルター
+    const importance = document.getElementById("importance-filter").value;
+    const status = document.getElementById("status-filter").value;
+    const appInput = document.getElementById("app-filter").value;
+
+    const rows = document.querySelectorAll("#shortcutTable tbody tr");
+
+    rows.forEach(row => {
+      const isCtrl = row.classList.contains("ctrl");
+      const isShift = row.classList.contains("shift");
+      const isAlt = row.classList.contains("alt");
+      const isWin = row.classList.contains("win");
+
+      const rowKey1 = row.cells[2].textContent;
+      const rowApp = row.cells[4].textContent;
+      const rowImportance = row.cells[6].textContent;
+      const rowStatus = row.cells[5].textContent;
+
+     // デフォルトではすべてのリストを表示
+      let show = true;
+
+      //何も選択されていないときはすべてのリストを表示
+      if (noneChecked) {
+        show = !(isCtrl || isShift || isAlt || isWin);
+      } 
+      //何かが選択されているときは選択項目に即したリストを表示。各装飾キーは加算。つまり、ctrlを選択するとctrlのみ、ctrlとshiftを選択するとctrl+shiftを装飾キーとする項目が選択される。
+      else if (ctrlChecked || shiftChecked || altChecked || winChecked) {
+        show = false;
+        if (ctrlChecked && !shiftChecked && !altChecked && !winChecked && isCtrl && !isShift && !isAlt && !isWin) show = true;
+        if (!ctrlChecked && shiftChecked && !altChecked && !winChecked && isShift && !isCtrl && !isAlt && !isWin) show = true;
+        if (!ctrlChecked && !shiftChecked && altChecked && !winChecked && isAlt && !isCtrl && !isShift && !isWin) show = true;
+        if (!ctrlChecked && !shiftChecked && !altChecked && winChecked && isWin && !isCtrl && !isShift && !isAlt) show = true;
+        if (ctrlChecked && shiftChecked && !altChecked && !winChecked && isCtrl && isShift && !isAlt && !isWin) show = true;
+        if (ctrlChecked && !shiftChecked && altChecked && !winChecked && isCtrl && !isShift && isAlt && !isWin) show = true;
+        if (ctrlChecked && !shiftChecked && !altChecked && winChecked && isCtrl && !isShift && !isAlt && isWin) show = true;
+        if (!ctrlChecked && shiftChecked && altChecked && !winChecked && !isCtrl && isShift && isAlt && !isWin) show = true;
+        if (!ctrlChecked && shiftChecked && !altChecked && winChecked && !isCtrl && isShift && !isAlt && isWin) show = true;
+        if (!ctrlChecked && !shiftChecked && altChecked && winChecked && !isCtrl && !isShift && isAlt && isWin) show = true;
+        if (ctrlChecked && shiftChecked && altChecked && !winChecked && isCtrl && isShift && isAlt && !isWin) show = true;
+        if (ctrlChecked && shiftChecked && !altChecked && winChecked && isCtrl && isShift && !isAlt && isWin) show = true;
+        if (ctrlChecked && !shiftChecked && altChecked && winChecked && isCtrl && !isShift && isAlt && isWin) show = true;
+        if (!ctrlChecked && shiftChecked && altChecked && winChecked && !isCtrl && isShift && isAlt && isWin) show = true;
+        if (ctrlChecked && shiftChecked && altChecked && winChecked && isCtrl && isShift && isAlt && isWin) show = true;
+      }
+
+      //文字
+      if (esc && rowKey1 !== "Escape") show = false;
+      if (f1 && rowKey1 !== "F1") show = false;
+      if (f2 && rowKey1 !== "F2") show = false;
+      if (f3 && rowKey1 !== "F3") show = false;
+      if (f4 && rowKey1 !== "F4") show = false;
+      if (f5 && rowKey1 !== "F5") show = false;
+      if (f6 && rowKey1 !== "F6") show = false;
+      if (f7 && rowKey1 !== "F7") show = false;
+      if (f8 && rowKey1 !== "F8") show = false;
+      if (f9 && rowKey1 !== "F9") show = false;
+      if (f10 && rowKey1 !== "F10") show = false;
+      if (f11 && rowKey1 !== "F11") show = false;
+      if (f12 && rowKey1 !== "F12") show = false;
+      if (printscreen && rowKey1 !== "PrintScreen") show = false;
+      if (pause && rowKey1 !== "Pause") show = false;
+      if (insert && rowKey1 !== "Insert") show = false;
+      if (num1 && rowKey1 !== "1") show = false;
+      if (num2 && rowKey1 !== "2") show = false;
+      if (num3 && rowKey1 !== "3") show = false;
+      if (num4 && rowKey1 !== "4") show = false;
+      if (num5 && rowKey1 !== "5") show = false;
+      if (num6 && rowKey1 !== "6") show = false;
+      if (num7 && rowKey1 !== "7") show = false;
+      if (num8 && rowKey1 !== "8") show = false;
+      if (num9 && rowKey1 !== "9") show = false;
+      if (num0 && rowKey1 !== "0") show = false;
+      if (a && rowKey1 !== "A") show = false;
+      if (b && rowKey1 !== "B") show = false;
+      if (c && rowKey1 !== "C") show = false;
+      if (d && rowKey1 !== "D") show = false;
+      if (e && rowKey1 !== "E") show = false;
+      if (f && rowKey1 !== "F") show = false;
+      if (g && rowKey1 !== "G") show = false;
+      if (h && rowKey1 !== "H") show = false;
+      if (i && rowKey1 !== "I") show = false;
+      if (j && rowKey1 !== "J") show = false;
+      if (k && rowKey1 !== "K") show = false;
+      if (l && rowKey1 !== "L") show = false;
+      if (m && rowKey1 !== "M") show = false;
+      if (n && rowKey1 !== "N") show = false;
+      if (o && rowKey1 !== "O") show = false;
+      if (p && rowKey1 !== "P") show = false;
+      if (q && rowKey1 !== "Q") show = false;
+      if (r && rowKey1 !== "R") show = false;
+      if (s && rowKey1 !== "S") show = false;
+      if (t && rowKey1 !== "T") show = false;
+      if (u && rowKey1 !== "U") show = false;
+      if (v && rowKey1 !== "V") show = false;
+      if (w && rowKey1 !== "W") show = false;
+      if (x && rowKey1 !== "X") show = false;
+      if (y && rowKey1 !== "Y") show = false;
+      if (z && rowKey1 !== "Z") show = false;
+      if (home && rowKey1 !== "Home") show = false;
+      if (end && rowKey1 !== "End") show = false;
+      if (pageup && rowKey1 !== "PageUp") show = false;
+      if (pagedown && rowKey1 !== "PageDown") show = false;
+      if (leftarrow && rowKey1 !== "←") show = false;
+      if (uparrow && rowKey1 !== "↑") show = false;
+      if (rightarrow && rowKey1 !== "→") show = false;
+      if (downarrow && rowKey1 !== "↓") show = false;
+      if (tab && rowKey1 !== "Tab") show = false;
+      if (space && rowKey1 !== "Space") show = false;
+      if (enter && rowKey1 !== "Enter") show = false;
+      if (convert && rowKey1 !== "変換") show = false;
+      if (nonconvert && rowKey1 !== "無変換") show = false;
+      
+      if (minus && rowKey1 != "－") show = false;
+      if (caret && rowKey1 != "＾") show = false;
+      if (at && rowKey1 != "＠") show = false;
+      if (leftbracket && rowKey1 != "［") show = false;
+      if (rightbracket && rowKey1 != "］") show = false;
+      if (semicolon && rowKey1 != "；") show = false;
+      if (colon && rowKey1 != "：") show = false;
+      if (comma && rowKey1 != "，") show = false;
+      if (dot && rowKey1 != "．") show = false;
+      if (slash && rowKey1 != "／") show = false;
+      if (backslash && rowKey1 != "￥") show = false;
+      
+      //App
+      if (appInput === "Windows" && rowApp !== "Windows") show = false;
+      if (appInput === "VSCode" && rowApp !== "VSCode") show = false;
+
+      //重要度
+      if (importance === "star" && rowImportance !== "★") show = false;
+      if (importance === "none" && rowImportance === "★") show = false;
+
+      //修得状況
+      if (status === "checked" && rowStatus !== "✓") show = false;
+      if (status === "none" && rowStatus === "✓") show = false;
+
+      if (show) {
+        row.classList.remove("hidden");
+      } else {
+        row.classList.add("hidden");
+      }
+    });
+  }
+
+document.addEventListener("keydown", (e) => {
+  switch (e.key.toLowerCase()) {
+    case "nonconvert":
+      toggleCheckbox("none");
+      break;
+    case "control":
+      toggleCheckbox("ctrl");
+      break;
+    case "shift":
+      toggleCheckbox("shift");
+      break;
+    case "alt":
+      toggleCheckbox("alt");
+      break;
+    case "meta": // Windowsキーは "meta" として扱われます
+      toggleCheckbox("win");
+      break;
+
+      case "f1": 
+      toggleCheckbox("f1"); 
+      break;
+      case "f2": 
+      toggleCheckbox("f2"); 
+      break;
+      case "f3": 
+      toggleCheckbox("f3"); 
+      break;
+      case "f4": 
+      toggleCheckbox("f4"); 
+      break;
+      case "f5": 
+      toggleCheckbox("f5"); 
+      break;
+      case "f6": 
+      toggleCheckbox("f6"); 
+      break;
+      case "f7": 
+      toggleCheckbox("f7"); 
+      break;
+      case "f8": 
+      toggleCheckbox("f8"); 
+      break;
+      case "f9": 
+      toggleCheckbox("f9"); 
+      break;
+      case "f10": 
+      toggleCheckbox("f10"); 
+      break;
+      case "f11": 
+      toggleCheckbox("f11"); 
+      break;
+      case "f12": 
+      toggleCheckbox("f12"); 
+      break;
+      case "1": 
+      toggleCheckbox("1"); 
+      break;
+      case "2": 
+      toggleCheckbox("2"); 
+      break;
+      case "3": 
+      toggleCheckbox("3"); 
+      break;
+      case "4": 
+      toggleCheckbox("4"); 
+      break;
+      case "5": 
+      toggleCheckbox("5"); 
+      break;
+      case "6": 
+      toggleCheckbox("6"); 
+      break;
+      case "7": 
+      toggleCheckbox("7"); 
+      break;
+      case "8": 
+      toggleCheckbox("8"); 
+      break;
+      case "9": 
+      toggleCheckbox("9"); 
+      break;
+      case "0": 
+      toggleCheckbox("0"); 
+      break;
+      case "a": 
+      toggleCheckbox("a"); 
+      break;
+      case "b": 
+      toggleCheckbox("b"); 
+      break;
+      case "c": 
+      toggleCheckbox("c"); 
+      break;
+      case "d": 
+      toggleCheckbox("d"); 
+      break;
+      case "e": 
+      toggleCheckbox("e"); 
+      break;
+      case "f": 
+      toggleCheckbox("f"); 
+      break;
+      case "g": 
+      toggleCheckbox("g"); 
+      break;
+      case "h": 
+      toggleCheckbox("h"); 
+      break;
+      case "i": 
+      toggleCheckbox("i"); 
+      break;
+      case "j": 
+      toggleCheckbox("j"); 
+      break;
+      case "k": 
+      toggleCheckbox("k"); 
+      break;
+      case "l": 
+      toggleCheckbox("l"); 
+      break;
+      case "m": 
+      toggleCheckbox("m"); 
+      break;
+      case "n": 
+      toggleCheckbox("n"); 
+      break;
+      case "o": 
+      toggleCheckbox("o"); 
+      break;
+      case "p": 
+      toggleCheckbox("p"); 
+      break;
+      case "q": 
+      toggleCheckbox("q"); 
+      break;
+      case "r": 
+      toggleCheckbox("r"); 
+      break;
+      case "s": 
+      toggleCheckbox("s"); 
+      break;
+      case "t": 
+      toggleCheckbox("t"); 
+      break;
+      case "u": 
+      toggleCheckbox("u"); 
+      break;
+      case "v": 
+      toggleCheckbox("v"); 
+      break;
+      case "w": 
+      toggleCheckbox("w"); 
+      break;
+      case "x": 
+      toggleCheckbox("x"); 
+      break;
+      case "y": 
+      toggleCheckbox("y"); 
+      break;
+      case "z": 
+      toggleCheckbox("z"); 
+      break;
+      
+      case "-": 
+      toggleCheckbox("minus"); 
+      break;
+      case "^": 
+      toggleCheckbox("caret"); 
+      break;
+      case "@": 
+      toggleCheckbox("at"); 
+      break;
+      case "[": 
+      toggleCheckbox("leftbracket"); 
+      break;
+      case "]": 
+      toggleCheckbox("rightbracket"); 
+      break;
+      case ";": 
+      toggleCheckbox("semicolon"); 
+      break;
+      case ":": 
+      toggleCheckbox("colon"); 
+
+      break;
+      case ",": 
+      toggleCheckbox("comma"); 
+      break;
+      case ".": 
+      toggleCheckbox("dot"); 
+      break;
+      case "/": 
+      toggleCheckbox("slash"); 
+      break;
+      case "\\": 
+      toggleCheckbox("backslash"); 
+      break;
+  }
+
+  if (currentFilter === "app") {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      cycleSelect("app-filter", e.key === "ArrowUp" ? -1 : 1);
+    }
+  } else if (currentFilter === "importance") {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      cycleSelect("importance-filter", e.key === "ArrowUp" ? -1 : 1);
+    }
+  } else if (currentFilter === "status") {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      cycleSelect("status-filter", e.key === "ArrowUp" ? -1 : 1);
+    }
+  }
+
+    if (e.key === "Convert") {
+      cycleFilterMode();
+    }
+  });
+
+  function toggleCheckbox(id) {
+    const checkbox = document.getElementById(id);
+    checkbox.checked = !checkbox.checked;
+    filter(); // フィルタリングを再実行
+  }
+
+  function cycleFilterMode() {
+    const filterModes = ["key", "app", "importance", "status"];
+    const currentIndex = filterModes.indexOf(currentFilter);
+    currentFilter = filterModes[(currentIndex + 1) % filterModes.length];
+    document.getElementById("status").innerText = `検索モード：${currentFilter}`;
+  }
+
+  function cycleSelect(selectId, direction) {
+    const select = document.getElementById(selectId);
+    const options = Array.from(select.options);
+    const currentIndex = options.findIndex(option => option.selected);
+    const newIndex = (currentIndex + direction + options.length) % options.length;
+    select.selectedIndex = newIndex;
+    filter();
+  }
+
+</script>
+
+</body>
+</html>

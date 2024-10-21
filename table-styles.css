@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'UDデジタル教科書体NP-R';
+  src: local('UDデジタル教科書体NP-R');
+}
+
+table {
+    font-family: 'UDデジタル教科書体NP-R', sans-serif; 
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ddd;
+}

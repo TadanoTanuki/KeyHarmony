@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショートカットキー管理</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="table-styles.css">
+</head>
+<body>
+    <h1>ショートカットキー管理</h1>
+    <form id="shortcut-form">
+        <input type="text" id="description" placeholder="説明" required>
+        <input type="text" id="shortcut" placeholder="ショートカットキー" required>
+        <input type="text" id="key" placeholder="キー" required>
+        <input type="text" id="app" placeholder="アプリ" required>
+        <button type="submit">追加</button>
+    </form>
+    <table id="shortcut-table">
+        <thead>
+            <tr>
+                <th>説明</th>
+                <th>ショートカットキー</th>
+                <th>キー</th>
+                <th>アプリ</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- エントリーがここに追加される -->
+        </tbody>
+    </table>
+    <button onclick="saveHtml()">HTMLを保存</button>
+    <script src="add-entry.js"></script>
+    <script src="save-html.js"></script>
+  </body>
+</html>

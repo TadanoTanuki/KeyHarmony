@@ -1,0 +1,7374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ショートカットキー一覧</title>
+  <style>
+    .hidden { display: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f2f2f2; }
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>ショートカットキー一覧</h1>
+
+<h5>装飾キー</h5>
+<label><input type="checkbox" id="none" onchange="filter()">装飾無し</label>
+<label><input type="checkbox" id="ctrl" onchange="filter()">Ctrl</label>
+<label><input type="checkbox" id="shift" onchange="filter()">Shift</label>
+<label><input type="checkbox" id="alt" onchange="filter()">Alt</label>
+<label><input type="checkbox" id="win" onchange="filter()">Win</label>
+
+<h5>ファンクションキー & システムキー</h5>
+<label><input type="checkbox" id="esc" onchange="filter()">Esc</label>
+<label><input type="checkbox" id="f1" onchange="filter()">F1</label>
+<label><input type="checkbox" id="f2" onchange="filter()">F2</label>
+<label><input type="checkbox" id="f3" onchange="filter()">F3</label>
+<label><input type="checkbox" id="f4" onchange="filter()">F4</label>
+<label><input type="checkbox" id="f5" onchange="filter()">F5</label>
+<label><input type="checkbox" id="f6" onchange="filter()">F6</label>
+<label><input type="checkbox" id="f7" onchange="filter()">F7</label>
+<label><input type="checkbox" id="f8" onchange="filter()">F8</label>
+<label><input type="checkbox" id="f9" onchange="filter()">F9</label>
+<label><input type="checkbox" id="f10" onchange="filter()">F10</label>
+<label><input type="checkbox" id="f11" onchange="filter()">F11</label>
+<label><input type="checkbox" id="f12" onchange="filter()">F12</label>
+<label><input type="checkbox" id="printscreen" onchange="filter()">Print Screen</label>
+<label><input type="checkbox" id="pause" onchange="filter()">Pause</label>
+<label><input type="checkbox" id="insert" onchange="filter()">Insert</label>
+
+<h5>文字キー</h5>
+<label><input type="checkbox" id="1" onchange="filter()">1</label>
+<label><input type="checkbox" id="2" onchange="filter()">2</label>
+<label><input type="checkbox" id="3" onchange="filter()">3</label>
+<label><input type="checkbox" id="4" onchange="filter()">4</label>
+<label><input type="checkbox" id="5" onchange="filter()">5</label>
+<label><input type="checkbox" id="6" onchange="filter()">6</label>
+<label><input type="checkbox" id="7" onchange="filter()">7</label>
+<label><input type="checkbox" id="8" onchange="filter()">8</label>
+<label><input type="checkbox" id="9" onchange="filter()">9</label>
+<label><input type="checkbox" id="0" onchange="filter()">0</label>
+<label><input type="checkbox" id="a" onchange="filter()">A</label>
+<label><input type="checkbox" id="b" onchange="filter()">B</label>
+<label><input type="checkbox" id="c" onchange="filter()">C</label>
+<label><input type="checkbox" id="d" onchange="filter()">D</label>
+<label><input type="checkbox" id="e" onchange="filter()">E</label>
+<label><input type="checkbox" id="f" onchange="filter()">F</label>
+<label><input type="checkbox" id="g" onchange="filter()">G</label>
+<label><input type="checkbox" id="h" onchange="filter()">H</label>
+<label><input type="checkbox" id="i" onchange="filter()">I</label>
+<label><input type="checkbox" id="j" onchange="filter()">J</label>
+<label><input type="checkbox" id="k" onchange="filter()">K</label>
+<label><input type="checkbox" id="l" onchange="filter()">L</label>
+<label><input type="checkbox" id="m" onchange="filter()">M</label>
+<label><input type="checkbox" id="n" onchange="filter()">N</label>
+<label><input type="checkbox" id="o" onchange="filter()">O</label>
+<label><input type="checkbox" id="p" onchange="filter()">P</label>
+<label><input type="checkbox" id="q" onchange="filter()">Q</label>
+<label><input type="checkbox" id="r" onchange="filter()">R</label>
+<label><input type="checkbox" id="s" onchange="filter()">S</label>
+<label><input type="checkbox" id="t" onchange="filter()">T</label>
+<label><input type="checkbox" id="u" onchange="filter()">U</label>
+<label><input type="checkbox" id="v" onchange="filter()">V</label>
+<label><input type="checkbox" id="w" onchange="filter()">W</label>
+<label><input type="checkbox" id="x" onchange="filter()">X</label>
+<label><input type="checkbox" id="y" onchange="filter()">Y</label>
+<label><input type="checkbox" id="z" onchange="filter()">Z</label>
+
+<h5>ナビゲーションキー</h5>
+<label><input type="checkbox" id="home" onchange="filter()">Home</label>
+<label><input type="checkbox" id="end" onchange="filter()">End</label>
+<label><input type="checkbox" id="pageup" onchange="filter()">Page Up</label>
+<label><input type="checkbox" id="pagedown" onchange="filter()">Page Down</label>
+<label><input type="checkbox" id="leftarrow" onchange="filter()">←</label>
+<label><input type="checkbox" id="uparrow" onchange="filter()">↑</label>
+<label><input type="checkbox" id="rightarrow" onchange="filter()">→</label>
+<label><input type="checkbox" id="downarrow" onchange="filter()">↓</label>
+
+<label><input type="checkbox" id="tab" onchange="filter()">Tab</label>
+<label><input type="checkbox" id="space" onchange="filter()">Space</label>
+<label><input type="checkbox" id="enter" onchange="filter()">Enter</label>
+<label><input type="checkbox" id="convert" onchange="filter()">変換</label>
+<label><input type="checkbox" id="nonconvert" onchange="filter()">無変換</label>
+
+<label><input type="checkbox" id="minus" onchange="filter()">－</label>
+<label><input type="checkbox" id="caret" onchange="filter()">＾</label>
+<label><input type="checkbox" id="at" onchange="filter()">＠</label>
+<label><input type="checkbox" id="leftbracket" onchange="filter()">［</label>
+<label><input type="checkbox" id="rightbracket" onchange="filter()">］</label>
+<label><input type="checkbox" id="colon" onchange="filter()">；</label>
+<label><input type="checkbox" id="semicolon" onchange="filter()">：</label>
+<label><input type="checkbox" id="comma" onchange="filter()">，</label>
+<label><input type="checkbox" id="dot" onchange="filter()">．</label>
+<label><input type="checkbox" id="slash" onchange="filter()">／</label>
+<label><input type="checkbox" id="backslash" onchange="filter()">￥</label>
+
+
+<p id="imput-mode">検索モード：key</p>
+  
+    <!-- Appフィルター -->
+    <label for="app-filter">アプリ:</label>
+    <select id="app-filter" onchange="filter()">
+      <option value="all">　</option>
+      <option value="Windows">Windows</option>
+      <option value="VSCode">VSCode</option>
+    </select>
+  
+  <!-- 重要度フィルター -->
+  <label for="importance-filter">重要:</label>
+  <select id="importance-filter" onchange="filter()">
+    <option value="all">　</option>
+    <option value="star">★のみ</option>
+    <option value="none">未入力のみ</option>
+  </select>
+  
+    <!-- 修得状況フィルター -->
+  <label for="status-filter">習得:</label>
+  <select id="status-filter" onchange="filter()">
+    <option value="all">　</option>
+    <option value="checked">✓のみ</option>
+    <option value="none">未入力のみ</option>
+  </select>
+
+<table id="shortcutTable">
+  <thead>
+    <tr>
+      <th>アプリ</th>
+      <th>機能</th>
+      <th>装飾</th>
+      <th>キー</th>
+      <th>2nd</th>
+      <th>習得</th>
+      <th>重要</th>
+      <th>タグ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- ショートカットキー一覧 -->
+        <tr class="Space">
+            <td>Obsidian Canvas</td>
+            <td>Zoom (Canvas)</td>
+            <td>Space</td>
+            <td>Scroll</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Fn">
+            <td></td>
+            <td>行の先頭に移動</td>
+            <td>Fn</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Space">
+            <td></td>
+            <td>行の末尾に移動</td>
+            <td>Space</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Fn">
+            <td>全般</td>
+            <td>すべて選択</td>
+            <td>Fn</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Fn">
+            <td>Windows</td>
+            <td>仮想デスクトップ切り替え</td>
+            <td>Fn</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>HoneyView</td>
+            <td>HoneyView 最前面に固定</td>
+            <td>Ctrl</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Win">
+            <td>Windows</td>
+            <td>仮想デスクトップ切り替え</td>
+            <td>Ctrl + Win</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MPC-BE</td>
+            <td>常に手前に表示</td>
+            <td>Ctrl</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Win">
+            <td>エディタ</td>
+            <td>ボールド体</td>
+            <td>Ctrl + Win</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>ブックマーク</td>
+            <td>Ctrl</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>コピー</td>
+            <td>Ctrl</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>DeepL</td>
+            <td>コピーして翻訳</td>
+            <td>Ctrl</td>
+            <td>C</td>
+            <td>C</td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>タグとアートワークをコピー</td>
+            <td>Ctrl</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Notion, PowerPoint, Vivaldi</td>
+            <td>複製</td>
+            <td>Ctrl</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Excel, SpreadSheet</td>
+            <td>上のセルと同じものを入力</td>
+            <td>Ctrl</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Word</td>
+            <td>中央揃え</td>
+            <td>Ctrl</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Toggle reading view</td>
+            <td>Ctrl</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>ブックマークバー</td>
+            <td>Ctrl</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi, 全般</td>
+            <td>検索</td>
+            <td>Ctrl</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Search current file</td>
+            <td>Ctrl</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td></td>
+            <td>Ctrl</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>エディタ</td>
+            <td>置換</td>
+            <td>Ctrl</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Search & replace in current file</td>
+            <td>Ctrl</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>履歴</td>
+            <td>Ctrl</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>エディタ</td>
+            <td>斜体</td>
+            <td>Ctrl</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Logseq</td>
+            <td>検索・新規作成</td>
+            <td>Ctrl</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Kanban: Add a list</td>
+            <td>Ctrl</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Gmail</td>
+            <td>リンクを挿入</td>
+            <td>Ctrl</td>
+            <td>K</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Word</td>
+            <td>左揃え</td>
+            <td>Ctrl</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>add internal link</td>
+            <td>Ctrl</td>
+            <td>L</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>新規作成</td>
+            <td>Ctrl</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>新しいウィンドウ</td>
+            <td>Ctrl</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>開く</td>
+            <td>Ctrl</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>HoneyView</td>
+            <td>HoneyView フォルダを開く</td>
+            <td>Ctrl</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>印刷</td>
+            <td>Ctrl</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Notion</td>
+            <td>検索</td>
+            <td>Ctrl</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Quick switcher: Open quick switcher</td>
+            <td>Ctrl</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>印刷</td>
+            <td>Ctrl</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>New Mind Map (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>クイックコマンド</td>
+            <td>Ctrl</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MPC-BE</td>
+            <td>お気に入りにクイック追加</td>
+            <td>Ctrl</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Word</td>
+            <td>右揃え</td>
+            <td>Ctrl</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Opera, Vivaldi</td>
+            <td>再読み込み</td>
+            <td>Ctrl</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>上書き保存</td>
+            <td>Ctrl</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>ページをキャプチャーしてファイルに保存</td>
+            <td>Ctrl</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>新しいトップレベルタブ</td>
+            <td>Ctrl</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee, 全般</td>
+            <td>新しいタブ</td>
+            <td>Ctrl</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian MarkMind</td>
+            <td>Change mindap layout (MarkMind)</td>
+            <td>Ctrl</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>エディタ</td>
+            <td>下線</td>
+            <td>Ctrl</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>エディタ</td>
+            <td>貼り付け</td>
+            <td>Ctrl</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>タグとアートワークを貼り付け</td>
+            <td>Ctrl</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee, Vivaldi, 全般</td>
+            <td>タブを閉じる</td>
+            <td>Ctrl</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Close current tab</td>
+            <td>Ctrl</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>エディタ</td>
+            <td>切り取り</td>
+            <td>Ctrl</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>Redo</td>
+            <td>Ctrl</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>全般</td>
+            <td>Undo</td>
+            <td>Ctrl</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>閉じたタブを開き直す</td>
+            <td>Ctrl</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>ズームのリセット</td>
+            <td>Ctrl</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>１つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>２つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>３つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>４つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>５つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>６つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>７つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>８つ目のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>最後のタブに切り替え</td>
+            <td>Ctrl</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td>ズームアウト（Zoom for Google Chrome）</td>
+            <td>Ctrl</td>
+            <td>，</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td>ズームイン（Zoom for Google Chrome）</td>
+            <td>Ctrl</td>
+            <td>.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td></td>
+            <td>Ctrl</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td></td>
+            <td>Ctrl</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Gmail</td>
+            <td>既読にする</td>
+            <td>Shift</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Gmail</td>
+            <td>未読にする</td>
+            <td>Shift</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>履歴を戻る</td>
+            <td>Shift</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>アドレス欄にフォーカス</td>
+            <td>Shift</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>ブックマークを作成する</td>
+            <td>Ctrl</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Bookmarks: Bookmark...</td>
+            <td>Alt</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>白黒フィルター</td>
+            <td>Alt</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ダウンロードパネル</td>
+            <td>Alt</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>エクスプローラ</td>
+            <td>パスにフォーカス</td>
+            <td>Alt</td>
+            <td>D</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td></td>
+            <td>Alt</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi, ブラウザ</td>
+            <td>ブックマーク検索</td>
+            <td>Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td></td>
+            <td>Alt</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ブックマークをエクスポート</td>
+            <td>Alt</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ページにフォーカス</td>
+            <td>Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>履歴パネル</td>
+            <td>Alt</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Importer: Open importer</td>
+            <td>Alt</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>MusicBee</td>
+            <td>再生アシスタント</td>
+            <td>Alt</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>検索欄にフォーカス</td>
+            <td>Alt</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>タブのピン止め／解除</td>
+            <td>Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Toggle pin</td>
+            <td>Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>メモパネル</td>
+            <td>Alt</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>タブスタックの名前を変更</td>
+            <td>Alt</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>タブスタックから取り出す</td>
+            <td>Alt</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Insert attachment</td>
+            <td>Alt</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Windows</td>
+            <td>プレビューを表示</td>
+            <td>Alt</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>パネル開閉バー</td>
+            <td>Alt</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td></td>
+            <td>Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>アクティブページのQRコードを作成</td>
+            <td>Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Toggle blockquote</td>
+            <td>Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>バックグラウンドタブを休止</td>
+            <td>Alt</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>MusicBee</td>
+            <td>CDの取り込み（リッピング）</td>
+            <td>Alt</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>選択したタブをセッションとして保存</td>
+            <td>Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Pandoc Plugin: Export as PowerPoint (pptx)</td>
+            <td>Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>タブをスタックする</td>
+            <td>Alt</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Toggle stacked tabs</td>
+            <td>Alt</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td></td>
+            <td>Alt</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>Fast Bookmark</td>
+            <td>Alt</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td></td>
+            <td>Alt</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>Zotero Connector</td>
+            <td>Alt</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>関連タブを選択</td>
+            <td>Alt</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>SimpleUndoClose</td>
+            <td>Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Undo close tab</td>
+            <td>Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Opera, Vivaldi</td>
+            <td>左のタブへ移動</td>
+            <td>Alt</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian Canvas MindMap</td>
+            <td>navigate between cards (Canvas)</td>
+            <td>Alt</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Opera, Vivaldi</td>
+            <td>右のタブへ移動</td>
+            <td>Alt</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Go to next tab</td>
+            <td>Alt</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian Canvas MindMap</td>
+            <td>navigate between cards (Canvas)</td>
+            <td>Alt</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td>音量ブースト（Enhacer for Youtube）</td>
+            <td>Alt</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian Canvas MindMap</td>
+            <td>navigate between cards (Canvas)</td>
+            <td>Alt</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td>Picture-in-Picture Extension</td>
+            <td>Alt</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian Canvas MindMap</td>
+            <td>navigate between cards (Canvas)</td>
+            <td>Alt</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース１に切り替える</td>
+            <td>Alt</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース２に切り替える</td>
+            <td>Alt</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース３に切り替える</td>
+            <td>Alt</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース４に切り替える</td>
+            <td>Alt</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース５に切り替える</td>
+            <td>Alt</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース６に切り替える</td>
+            <td>Alt</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース７に切り替える</td>
+            <td>Alt</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペース８に切り替える</td>
+            <td>Alt</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ワークスペースメニューを表示</td>
+            <td>Alt</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian</td>
+            <td>Citations: Open literature note</td>
+            <td>Alt</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>ブックマークパネル</td>
+            <td>Alt</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Gmail</td>
+            <td>bcc に宛先を追加</td>
+            <td>Ctrl + Shift</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>選択範囲をクリップボードにコピー</td>
+            <td>Ctrl + Shift</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Gmail</td>
+            <td>cc に宛先を追加</td>
+            <td>Ctrl + Shift</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Citations: Inert literature note link</td>
+            <td>Ctrl + Shift</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Windows</td>
+            <td>パスをコピー</td>
+            <td>Ctrl + Shift</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>拡張機能</td>
+            <td>Ctrl + Shift</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Gmail, SpreadSheet</td>
+            <td>中央揃え</td>
+            <td>Ctrl + Shift</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Search: Search in all files</td>
+            <td>Ctrl + Shift</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>ブラウザ</td>
+            <td>開発者ツール</td>
+            <td>Ctrl + Shift</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>開発者ツール</td>
+            <td>Ctrl + Shift</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>開発者コンソール</td>
+            <td>Ctrl + Shift</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Gmail, SpreadSheet</td>
+            <td>左揃え</td>
+            <td>Ctrl + Shift</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>新しいプライベートウィンドウ</td>
+            <td>Ctrl + Shift</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Zotero</td>
+            <td>新規作成（Zotero）</td>
+            <td>Ctrl + Shift</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Open another vault</td>
+            <td>Ctrl + Shift</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>export to PDF...</td>
+            <td>Ctrl + Shift</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Gmail, SpreadSheet</td>
+            <td>右揃え</td>
+            <td>Ctrl + Shift</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>ページを強制的に再読み込み</td>
+            <td>Ctrl + Shift</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>設定</td>
+            <td>Ctrl + Shift</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Open settings</td>
+            <td>Ctrl + Shift</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>新しいタブ</td>
+            <td>Ctrl + Shift</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Text Format: Title case</td>
+            <td>Ctrl + Shift</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Auto Link Title: Normal paste (no fetching behavior)</td>
+            <td>Ctrl + Shift</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Pandoc Plugin: Export as Word document (docx)</td>
+            <td>Ctrl + Shift</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>閉じたタブの一覧を表示</td>
+            <td>Ctrl + Shift</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td>番号付きリスト</td>
+            <td>Ctrl + Shift</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td>箇条書き</td>
+            <td>Ctrl + Shift</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td>引用符</td>
+            <td>Ctrl + Shift</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td>ズームをリセット（Zoom for Google Chrome）</td>
+            <td>Ctrl + Shift</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>ページを拡大</td>
+            <td>Ctrl + Shift</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>ページを縮小</td>
+            <td>Ctrl + Shift</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>すべてのリンクをコピー</td>
+            <td>Ctrl + Shift</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Bookmarks: Bookmark all tabs...</td>
+            <td>Ctrl + Shift</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>選択したタブをブックマーク</td>
+            <td>Ctrl + Alt</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>選択範囲のキャプチャーをクリップボードに保存</td>
+            <td>Ctrl + Alt</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>選択範囲のキャプチャーをファイルに保存</td>
+            <td>Ctrl + Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td>選択範囲をキャプチャして保存</td>
+            <td>Ctrl + Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>ウィンドウパネル</td>
+            <td>Ctrl + Alt</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>履歴を戻る</td>
+            <td>Ctrl + Alt</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>履歴を進む</td>
+            <td>Ctrl + Alt</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Vivaldi</td>
+            <td>Wayback Machine</td>
+            <td>Ctrl + Alt</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Alt</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>セピア調フィルター</td>
+            <td>Shift + Alt</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>Dark Reader</td>
+            <td>Shift + Alt</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>PowerPoint</td>
+            <td>左揃え</td>
+            <td>Shift + Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Excel</td>
+            <td>左揃え</td>
+            <td>Shift + Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>SpreadSheet</td>
+            <td>左揃え</td>
+            <td>Shift + Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>他のタブをミュート</td>
+            <td>Shift + Alt</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>Notion（選択箇所）</td>
+            <td>Shift + Alt</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>Obsidian Web</td>
+            <td>Shift + Alt</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>Fireshot（PDF）</td>
+            <td>Shift + Alt</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>Tab Session Maager</td>
+            <td>Shift + Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>タブのスタックを解除</td>
+            <td>Shift + Alt</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Shift + Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>タブスタックを閉じる</td>
+            <td>Shift + Alt</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>タブの選択解除</td>
+            <td>Shift + Alt</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>再生速度を下げる</td>
+            <td>Shift + Alt</td>
+            <td>，</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>再生速度を上げる</td>
+            <td>Shift + Alt</td>
+            <td>.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>Picture in Picture（Enhancer for Youtube）</td>
+            <td>Shift + Alt</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Vivaldi</td>
+            <td>再生速度をリセット</td>
+            <td>Shift + Alt</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td>Extract Highlights: Shortcut for extracting highlights</td>
+            <td>Shift + Alt</td>
+            <td>;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td></td>
+            <td>Extract Highlights: Shortcut for highlighting sentence cursor is in</td>
+            <td>Shift + Alt</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Obsidian Canvas</td>
+            <td>Zoom to fit (Canvas)</td>
+            <td>Shift + Alt</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift Alt">
+            <td>Obsidian Canvas</td>
+            <td>Zoom to selection (Canvas)</td>
+            <td>Shift + Alt</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>ページ内検索（前）</td>
+            <td>Shift</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>タブスタックを閉じる</td>
+            <td>Shift</td>
+            <td>F2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td>右クリック</td>
+            <td>Shift</td>
+            <td>F10</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F11</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>F12</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>タスクマネージャ</td>
+            <td>Shift</td>
+            <td>Esc</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>MusicBee</td>
+            <td>タグを編集</td>
+            <td>Shift</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Obsidian Canvas</td>
+            <td>Pan horizontally</td>
+            <td>Shift</td>
+            <td>Scroll</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td>ジャンプ戻り</td>
+            <td>Shift</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td>ジャンプ送り</td>
+            <td>Shift</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td></td>
+            <td></td>
+            <td>Shift</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>全画面表示</td>
+            <td>Shift</td>
+            <td>F11</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Shift">
+            <td>Vivaldi</td>
+            <td>一つ前のタブに戻る</td>
+            <td>Shift</td>
+            <td>F7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Vivaldi</td>
+            <td>一つ後のタブに進む</td>
+            <td></td>
+            <td>F8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Vivaldi</td>
+            <td>タブのスタックを解除</td>
+            <td></td>
+            <td>F2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Vivaldi</td>
+            <td>タブスタックから取り出す</td>
+            <td></td>
+            <td>F3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Vivaldi</td>
+            <td>ページ内検索（次）</td>
+            <td></td>
+            <td>F5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Vivaldi</td>
+            <td>読み込みを中止</td>
+            <td></td>
+            <td>Esc</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Notion Calendar</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>秦版IME（誤）変換辞典</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Excel</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Everything</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>PureRef</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Intel Unison</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Logovista</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>LINE</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Milanote</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Notion</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Obsidian</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>PowerPoint</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>QR</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Upnote</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Vivaldi</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Word</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>Zotero</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Book Notes（iCloud）</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>slimjet</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>PDF24</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Cent Browser</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Brave</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Chromium</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>Iron</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td></td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Desktop</td>
+            <td>PhraseExpress 新規登録</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>PhraseExpress 最後に使ったフレーズを編集</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>PhraseExpress 一時停止</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>[</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td></td>
+            <td>PhraseExpress 設定画面</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Windows</td>
+            <td>アクションセンターを開く</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>A</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Windows</td>
+            <td>通知領域アイコンの選択</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>デスクトップ</td>
+            <td>Win</td>
+            <td>D</td>
+            <td></td>
+            <td>★</td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>エクスプローラー</td>
+            <td>Win</td>
+            <td>E</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>Game Bar の起動</td>
+            <td>Win</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>「共有」の表示</td>
+            <td>Win</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>設定</td>
+            <td>Win</td>
+            <td>I</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>デバイス検索（接続設定 ）</td>
+            <td>Win</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>ロック</td>
+            <td>Win</td>
+            <td>L</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>全てのウィンドウを最小化</td>
+            <td>Win</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>画面回転の切り替え</td>
+            <td>Win</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>ファイル名を指定して実行</td>
+            <td>Win</td>
+            <td>R</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>Cortana(検索)の呼び出し</td>
+            <td>Win</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>タスクバーの選択</td>
+            <td>Win</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>コンピューターの簡単操作センターの呼び出し</td>
+            <td>Win</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>クリップボードのビンを開く  </td>
+            <td>Win</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>メニュー</td>
+            <td>Win</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>スナップレイアウト</td>
+            <td>Win</td>
+            <td>Z</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>@</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td></td>
+            <td>ウィンドウを右にスナップ</td>
+            <td>Win</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td></td>
+            <td>ウィンドウを最大化 </td>
+            <td>Win</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>システム・プロパティ</td>
+            <td>Win</td>
+            <td>Pause</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>タスクビューを開く</td>
+            <td>Win</td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>IMEの変更 </td>
+            <td>Win</td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td>タスクバーの番号位置にあるアプリを開く </td>
+            <td>Win</td>
+            <td>1</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td>Windows</td>
+            <td></td>
+            <td>Win</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td></td>
+            <td></td>
+            <td>Win</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win">
+            <td></td>
+            <td></td>
+            <td>Win</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>@</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td></td>
+            <td>Win + Shift</td>
+            <td>;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td>全般</td>
+            <td>ヘルプ</td>
+            <td>Win + Shift</td>
+            <td>F1</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td>全般</td>
+            <td>リネーム</td>
+            <td>Win + Shift</td>
+            <td>F2</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Excel, SpreadSheet</td>
+            <td>セル内を編集</td>
+            <td></td>
+            <td>F2</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td>開発者ツール</td>
+            <td></td>
+            <td>F8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>ATOK</td>
+            <td>半角英数字に変更</td>
+            <td></td>
+            <td>F10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>全般</td>
+            <td>全画面表示</td>
+            <td></td>
+            <td>F11</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>全般</td>
+            <td>名前を付けて保存</td>
+            <td></td>
+            <td>F12</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>PhraseExpress</td>
+            <td>【】</td>
+            <td></td>
+            <td>][</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td>〔…〕</td>
+            <td></td>
+            <td>[.]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>[[</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>]]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Googleデフォルト検索画面</td>
+            <td></td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>スヌーズ</td>
+            <td></td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Mutant</td>
+            <td>ブックマークに登録</td>
+            <td></td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>新規メールを作成</td>
+            <td></td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>DVDを開く</td>
+            <td></td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>アーカイブ</td>
+            <td></td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>転送</td>
+            <td></td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>受信トレイに移動</td>
+            <td></td>
+            <td>G</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>スターをつけたメールに移動</td>
+            <td></td>
+            <td>G</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>送信済みに移動</td>
+            <td></td>
+            <td>G</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>下書きに移動</td>
+            <td></td>
+            <td>G</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 前のページ</td>
+            <td></td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google画像検索へ切り替え</td>
+            <td></td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>画像を保存</td>
+            <td></td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 次の検索結果</td>
+            <td></td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 前の検索結果</td>
+            <td></td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 次のページ</td>
+            <td></td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Googleマップへ切り替え</td>
+            <td></td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>ミュート</td>
+            <td></td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>ファイルを開く</td>
+            <td></td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>チャットの連絡先を検索</td>
+            <td></td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>クイック再生</td>
+            <td></td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>返信</td>
+            <td></td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>スターを付ける</td>
+            <td></td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>字幕の切り替え</td>
+            <td></td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google 動画検索へ切り替え</td>
+            <td></td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>閉じる</td>
+            <td></td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Opera</td>
+            <td>次へ</td>
+            <td></td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Opera</td>
+            <td>戻る</td>
+            <td></td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 フィルタを削除</td>
+            <td></td>
+            <td>Z</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 フィルタ（過去１時間）</td>
+            <td></td>
+            <td>Z</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 フィルタ（過去24時間）</td>
+            <td></td>
+            <td>Z</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 フィルタ（過去１週間）</td>
+            <td></td>
+            <td>Z</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 フィルタ（過去１ヶ月）</td>
+            <td></td>
+            <td>Z</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 フィルタ（過去１年間）</td>
+            <td></td>
+            <td>Z</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Toggle sort by date/relevance</td>
+            <td></td>
+            <td>Z</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Toggle verbatim search</td>
+            <td></td>
+            <td>Z</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google画像検索 大きいサイズ</td>
+            <td></td>
+            <td>Z</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google画像検索 中くらいのサイズ</td>
+            <td></td>
+            <td>Z</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google画像検索 小さいサイズ（アイコンサイズ）</td>
+            <td></td>
+            <td>Z</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>前へ</td>
+            <td></td>
+            <td>，</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>次へ</td>
+            <td></td>
+            <td>.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Gmail</td>
+            <td>メールを検索</td>
+            <td></td>
+            <td>/</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索バーにフォーカス</td>
+            <td></td>
+            <td>/</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>少し先へ</td>
+            <td></td>
+            <td>/</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>少し後へ</td>
+            <td></td>
+            <td>\</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 次のページ</td>
+            <td></td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Zotero</td>
+            <td>右ペイン項目切り替え（Zotero）     </td>
+            <td></td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>次のファイル</td>
+            <td></td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 前のページ</td>
+            <td></td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Zotero</td>
+            <td>右ペイン項目切り替え（Zotero）     </td>
+            <td></td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>前のファイル</td>
+            <td></td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 前の検索結果</td>
+            <td></td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>音量を上げる</td>
+            <td></td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 次の検索結果</td>
+            <td></td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>音量を下げる</td>
+            <td></td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索バーにフォーカス</td>
+            <td></td>
+            <td>Esc</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>エクスプローラ</td>
+            <td>右クリックメニューを閉じる</td>
+            <td></td>
+            <td>Esc</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 開く</td>
+            <td></td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian Canvas MindMap</td>
+            <td>create brother card (Canvas)</td>
+            <td></td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian MarkMind</td>
+            <td>New brother node (MarkMind)</td>
+            <td></td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Web Search Navigator</td>
+            <td>Google検索 開く</td>
+            <td></td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian MarkMind</td>
+            <td>Edit node</td>
+            <td></td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE, Mutant</td>
+            <td>再生 / 一次停止</td>
+            <td></td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian Canvas MindMap</td>
+            <td>create child card (Canvas)</td>
+            <td></td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian MarkMind</td>
+            <td>New child node (MarkMind)</td>
+            <td></td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>先頭に移動</td>
+            <td></td>
+            <td>Home</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MPC-BE</td>
+            <td>常に手前に表示</td>
+            <td></td>
+            <td>中央クリック</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian</td>
+            <td>Baclinks: Show backlinks</td>
+            <td></td>
+            <td>，</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian Canvas MindMap</td>
+            <td>create floating cards (Canvas)</td>
+            <td></td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>MusicBee</td>
+            <td>前のアルバム</td>
+            <td>Alt</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MPC-BE</td>
+            <td>コマ戻し</td>
+            <td>Ctrl</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian Canvas MindMap</td>
+            <td>create floating cards (Canvas)</td>
+            <td>Ctrl</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>次のアルバム</td>
+            <td>Ctrl</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MPC-BE</td>
+            <td>コマ送り</td>
+            <td>Ctrl</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Outliner: Fold the list</td>
+            <td>Ctrl</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian Canvas MindMap</td>
+            <td>create floating cards (Canvas)</td>
+            <td>Ctrl</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Outliner: Unfold the list</td>
+            <td>Ctrl</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Follow link under cursor</td>
+            <td>Ctrl</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Windows</td>
+            <td>プロパティを表示</td>
+            <td>Ctrl</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Obsidian Canvas MindMap</td>
+            <td>create floating cards (Canvas)</td>
+            <td>Alt</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>Vivaldi</td>
+            <td>履歴を進む</td>
+            <td>Alt</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #1</td>
+            <td>Ctrl</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #2</td>
+            <td>Ctrl</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★★（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #3</td>
+            <td>Ctrl</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★★★（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #4</td>
+            <td>Ctrl</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★★★★（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #5</td>
+            <td>Ctrl</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★★★★★（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #6</td>
+            <td>Ctrl</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★0.5下げる（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #7</td>
+            <td>Ctrl</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★0.5上げる（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to tab #8</td>
+            <td>Ctrl</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to last tab</td>
+            <td>Ctrl</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価☆（ゼロ）（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価リセット（選択したトラック）</td>
+            <td>Ctrl</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Navigate back</td>
+            <td>Ctrl</td>
+            <td>[</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Gmail</td>
+            <td>インデントを減らす</td>
+            <td>Ctrl</td>
+            <td>[</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Navigate forward</td>
+            <td>Ctrl</td>
+            <td>]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Gmail</td>
+            <td>インデントを増やす</td>
+            <td>Ctrl</td>
+            <td>]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td>Open help</td>
+            <td>Ctrl</td>
+            <td>F1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Toggle comment</td>
+            <td>Ctrl</td>
+            <td>/</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian MarkMind</td>
+            <td>Expand / Collapse node (MarkMind)</td>
+            <td></td>
+            <td>/</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Command palette: Open command palette</td>
+            <td>Ctrl</td>
+            <td>@</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Vivaldi</td>
+            <td>タブサイクラー</td>
+            <td>Ctrl</td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Go to last tab</td>
+            <td>Ctrl</td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Open link under cursor in new tab</td>
+            <td>Ctrl</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Desktop</td>
+            <td>Password</td>
+            <td>Ctrl</td>
+            <td>@</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td></td>
+            <td>Open link under  cursor in new window</td>
+            <td>Ctrl</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>ChatGPT, Gmail</td>
+            <td>送信</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift Alt">
+            <td>Web Search Navigator</td>
+            <td>Google検索 バックグラウンドタブで開く</td>
+            <td>Ctrl + Shift + Alt</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Outlner: Move list and sublists dows</td>
+            <td>Ctrl</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Outliner: Move list and sublists up</td>
+            <td>Ctrl</td>
+            <td>↑</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td>Reminder: Show calendar popup</td>
+            <td>Ctrl + Shift</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td></td>
+            <td>選択中のウィンドウをモニターに移動</td>
+            <td>Ctrl + Shift</td>
+            <td>←</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td>選択中のウィンドウをモニターに移動</td>
+            <td>Win + Shift</td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td></td>
+            <td>Rename file</td>
+            <td>Win + Shift</td>
+            <td>F2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Shift">
+            <td>Obsidian</td>
+            <td>Split down</td>
+            <td>Win + Shift</td>
+            <td>↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>Obsidian</td>
+            <td>Split right</td>
+            <td></td>
+            <td>→</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Obsidian</td>
+            <td>Text Format: Heading lower</td>
+            <td>Ctrl + Alt</td>
+            <td>[</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Obsidian</td>
+            <td>Text Format: Heading upper</td>
+            <td>Ctrl + Alt</td>
+            <td>]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Text Format: Lowercase</td>
+            <td>Ctrl + Shift</td>
+            <td>.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Text Format: Remove hyphens</td>
+            <td>Ctrl + Shift</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Text Format: Uppercase</td>
+            <td>Ctrl + Shift</td>
+            <td>，</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Vivaldi</td>
+            <td>タブサイクラー（逆）</td>
+            <td>Ctrl + Shift</td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Text Format: Remove all spaces in selection</td>
+            <td>Ctrl + Shift</td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Open link under cursor to the right</td>
+            <td>Ctrl + Shift</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>Obsidian</td>
+            <td>Text Format: Remove blank line(s)</td>
+            <td>Ctrl + Shift</td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Windows</td>
+            <td>開いているアプリを表示</td>
+            <td>Ctrl + Alt</td>
+            <td>Tab</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>MPC-BE</td>
+            <td>全画面表示</td>
+            <td>Ctrl + Alt</td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Alt">
+            <td>Obsidian</td>
+            <td>Todoist タスクをクイック追加</td>
+            <td>Ctrl + Alt</td>
+            <td>Space</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian Canvas</td>
+            <td>Clone card (Canvas)</td>
+            <td>Ctrl</td>
+            <td>Drag</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian Canvas</td>
+            <td>Zoom (Canvas)</td>
+            <td>Ctrl</td>
+            <td>Scroll</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★（再生中のトラック）</td>
+            <td>Ctrl</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>MusicBee</td>
+            <td>評価★★（再生中のトラック）</td>
+            <td>Ctrl</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価★★★（再生中のトラック）</td>
+            <td></td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価★★★★（再生中のトラック）</td>
+            <td></td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価★★★★★（再生中のトラック）</td>
+            <td></td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価★0.5下げる（再生中のトラック）</td>
+            <td></td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価★0.5上げる（再生中のトラック）</td>
+            <td></td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価☆（ゼロ）（再生中のトラック）</td>
+            <td></td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>評価リセット（再生中のトラック）</td>
+            <td></td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>エクスプローラで表示</td>
+            <td></td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>設定</td>
+            <td></td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td>MusicBee</td>
+            <td>カスタム検索</td>
+            <td>Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>MusicBee</td>
+            <td>イコライザ</td>
+            <td>Ctrl + Shift</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>MusicBee</td>
+            <td>コンパクトプレーヤー</td>
+            <td>Ctrl + Shift</td>
+            <td>C</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>シアターモード</td>
+            <td></td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>タグマネージャー</td>
+            <td></td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>最後に再生</td>
+            <td></td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>MusicBee</td>
+            <td>次に再生</td>
+            <td></td>
+            <td>Enter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl Shift">
+            <td>MusicBee</td>
+            <td>開始 / 終了 ブックマーク</td>
+            <td>Ctrl + Shift</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Ctrl">
+            <td>Obsidian</td>
+            <td>Toggle right sidebar</td>
+            <td>Ctrl</td>
+            <td>Key226</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Alt">
+            <td></td>
+            <td></td>
+            <td>Alt</td>
+            <td>F2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F11</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F12</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>][</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>[.]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>[[</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>]]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>B</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>D</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>F</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>H</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>J</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>K</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>L</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>M</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>Q</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td>Todoist を見せる/隠す</td>
+            <td>Win + Alt</td>
+            <td>S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>T</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>U</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>V</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td>Z</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td>PhraseExpress</td>
+            <td>C:\Users\quarr\WorkSpace\MA</td>
+            <td>Win + Alt</td>
+            <td>ma@^</td>
+            <td></td>
+            <td>★</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="Win Alt">
+            <td></td>
+            <td></td>
+            <td>Win + Alt</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      
+  </tbody>
+</table>
+
+<script>
+    let currentFilter = "key"; "key", "app", "importance", "status"
+
+  function filter() {
+    
+    //装飾キー
+    const noneChecked = document.getElementById("none").checked;
+    const ctrlChecked = document.getElementById("ctrl").checked;
+    const shiftChecked = document.getElementById("shift").checked;
+    const altChecked = document.getElementById("alt").checked;
+    const winChecked = document.getElementById("win").checked;
+    
+    // ファンクションキー & システムキー
+    const esc = document.getElementById("esc").checked;
+    const f1 = document.getElementById("f1").checked;
+    const f2 = document.getElementById("f2").checked;
+    const f3 = document.getElementById("f3").checked;
+    const f4 = document.getElementById("f4").checked;
+    const f5 = document.getElementById("f5").checked;
+    const f6 = document.getElementById("f6").checked;
+    const f7 = document.getElementById("f7").checked;
+    const f8 = document.getElementById("f8").checked;
+    const f9 = document.getElementById("f9").checked;
+    const f10 = document.getElementById("f10").checked;
+    const f11 = document.getElementById("f11").checked;
+    const f12 = document.getElementById("f12").checked;
+    const printscreen = document.getElementById("printscreen").checked;
+    const pause = document.getElementById("pause").checked;
+    const insert = document.getElementById("insert").checked;
+
+    //数字
+    const num1 = document.getElementById("1").checked;
+    const num2 = document.getElementById("2").checked;
+    const num3 = document.getElementById("3").checked;
+    const num4 = document.getElementById("4").checked;
+    const num5 = document.getElementById("5").checked;
+    const num6 = document.getElementById("6").checked;
+    const num7 = document.getElementById("7").checked;
+    const num8 = document.getElementById("8").checked;
+    const num9 = document.getElementById("9").checked;
+    const num0 = document.getElementById("0").checked;
+
+    //文字
+    const a = document.getElementById("a").checked;
+    const b = document.getElementById("b").checked;
+    const c = document.getElementById("c").checked;
+    const d = document.getElementById("d").checked;
+    const e = document.getElementById("e").checked;
+    const f = document.getElementById("f").checked;
+    const g = document.getElementById("g").checked;
+    const h = document.getElementById("h").checked;
+    const i = document.getElementById("i").checked;
+    const j = document.getElementById("j").checked;
+    const k = document.getElementById("k").checked;
+    const l = document.getElementById("l").checked;
+    const m = document.getElementById("m").checked;
+    const n = document.getElementById("n").checked;
+    const o = document.getElementById("o").checked;
+    const p = document.getElementById("p").checked;
+    const q = document.getElementById("q").checked;
+    const r = document.getElementById("r").checked;
+    const s = document.getElementById("s").checked;
+    const t = document.getElementById("t").checked;
+    const u = document.getElementById("u").checked;
+    const v = document.getElementById("v").checked;
+    const w = document.getElementById("w").checked;
+    const x = document.getElementById("x").checked;
+    const y = document.getElementById("y").checked;
+    const z = document.getElementById("z").checked;
+
+    // ナビゲーションキー
+    const home = document.getElementById("home").checked;
+    const end = document.getElementById("end").checked;
+    const pageup = document.getElementById("pageup").checked;
+    const pagedown = document.getElementById("pagedown").checked;
+    const leftarrow = document.getElementById("leftarrow").checked;
+    const uparrow = document.getElementById("uparrow").checked;
+    const rightarrow = document.getElementById("rightarrow").checked;
+    const downarrow = document.getElementById("downarrow").checked;
+    
+    const tab = document.getElementById("tab").checked;
+    const space = document.getElementById("space").checked;
+    const enter = document.getElementById("enter").checked;
+    const convert = document.getElementById("convert").checked;
+    const nonconvert = document.getElementById("nonconvert").checked;
+
+    const minus = document.getElementById("minus").checked;
+    const caret = document.getElementById("caret").checked;
+    const at = document.getElementById("at").checked;
+    const leftbracket = document.getElementById("leftbracket").checked;
+    const rightbracket = document.getElementById("rightbracket").checked;
+    const colon = document.getElementById("colon").checked;
+    const semicolon = document.getElementById("semicolon").checked;
+    const comma = document.getElementById("comma").checked;
+    const dot = document.getElementById("dot").checked;
+    const slash = document.getElementById("slash").checked;
+    const backslash = document.getElementById("backslash").checked;
+
+
+//その他のフィルター
+    const importance = document.getElementById("importance-filter").value;
+    const status = document.getElementById("status-filter").value;
+    const appInput = document.getElementById("app-filter").value;
+
+    const rows = document.querySelectorAll("#shortcutTable tbody tr");
+
+    rows.forEach(row => {
+      const isCtrl = row.classList.contains("ctrl");
+      const isShift = row.classList.contains("shift");
+      const isAlt = row.classList.contains("alt");
+      const isWin = row.classList.contains("win");
+
+      const rowKey1 = row.cells[2].textContent;
+      const rowApp = row.cells[4].textContent;
+      const rowImportance = row.cells[6].textContent;
+      const rowStatus = row.cells[5].textContent;
+
+     // デフォルトではすべてのリストを表示
+      let show = true;
+
+      //何も選択されていないときはすべてのリストを表示
+      if (noneChecked) {
+        show = !(isCtrl || isShift || isAlt || isWin);
+      } 
+      //何かが選択されているときは選択項目に即したリストを表示。各装飾キーは加算。つまり、ctrlを選択するとctrlのみ、ctrlとshiftを選択するとctrl+shiftを装飾キーとする項目が選択される。
+      else if (ctrlChecked || shiftChecked || altChecked || winChecked) {
+        show = false;
+        if (ctrlChecked && !shiftChecked && !altChecked && !winChecked && isCtrl && !isShift && !isAlt && !isWin) show = true;
+        if (!ctrlChecked && shiftChecked && !altChecked && !winChecked && isShift && !isCtrl && !isAlt && !isWin) show = true;
+        if (!ctrlChecked && !shiftChecked && altChecked && !winChecked && isAlt && !isCtrl && !isShift && !isWin) show = true;
+        if (!ctrlChecked && !shiftChecked && !altChecked && winChecked && isWin && !isCtrl && !isShift && !isAlt) show = true;
+        if (ctrlChecked && shiftChecked && !altChecked && !winChecked && isCtrl && isShift && !isAlt && !isWin) show = true;
+        if (ctrlChecked && !shiftChecked && altChecked && !winChecked && isCtrl && !isShift && isAlt && !isWin) show = true;
+        if (ctrlChecked && !shiftChecked && !altChecked && winChecked && isCtrl && !isShift && !isAlt && isWin) show = true;
+        if (!ctrlChecked && shiftChecked && altChecked && !winChecked && !isCtrl && isShift && isAlt && !isWin) show = true;
+        if (!ctrlChecked && shiftChecked && !altChecked && winChecked && !isCtrl && isShift && !isAlt && isWin) show = true;
+        if (!ctrlChecked && !shiftChecked && altChecked && winChecked && !isCtrl && !isShift && isAlt && isWin) show = true;
+        if (ctrlChecked && shiftChecked && altChecked && !winChecked && isCtrl && isShift && isAlt && !isWin) show = true;
+        if (ctrlChecked && shiftChecked && !altChecked && winChecked && isCtrl && isShift && !isAlt && isWin) show = true;
+        if (ctrlChecked && !shiftChecked && altChecked && winChecked && isCtrl && !isShift && isAlt && isWin) show = true;
+        if (!ctrlChecked && shiftChecked && altChecked && winChecked && !isCtrl && isShift && isAlt && isWin) show = true;
+        if (ctrlChecked && shiftChecked && altChecked && winChecked && isCtrl && isShift && isAlt && isWin) show = true;
+      }
+
+      //文字
+      if (esc && rowKey1 !== "Escape") show = false;
+      if (f1 && rowKey1 !== "F1") show = false;
+      if (f2 && rowKey1 !== "F2") show = false;
+      if (f3 && rowKey1 !== "F3") show = false;
+      if (f4 && rowKey1 !== "F4") show = false;
+      if (f5 && rowKey1 !== "F5") show = false;
+      if (f6 && rowKey1 !== "F6") show = false;
+      if (f7 && rowKey1 !== "F7") show = false;
+      if (f8 && rowKey1 !== "F8") show = false;
+      if (f9 && rowKey1 !== "F9") show = false;
+      if (f10 && rowKey1 !== "F10") show = false;
+      if (f11 && rowKey1 !== "F11") show = false;
+      if (f12 && rowKey1 !== "F12") show = false;
+      if (printscreen && rowKey1 !== "PrintScreen") show = false;
+      if (pause && rowKey1 !== "Pause") show = false;
+      if (insert && rowKey1 !== "Insert") show = false;
+      if (num1 && rowKey1 !== "1") show = false;
+      if (num2 && rowKey1 !== "2") show = false;
+      if (num3 && rowKey1 !== "3") show = false;
+      if (num4 && rowKey1 !== "4") show = false;
+      if (num5 && rowKey1 !== "5") show = false;
+      if (num6 && rowKey1 !== "6") show = false;
+      if (num7 && rowKey1 !== "7") show = false;
+      if (num8 && rowKey1 !== "8") show = false;
+      if (num9 && rowKey1 !== "9") show = false;
+      if (num0 && rowKey1 !== "0") show = false;
+      if (a && rowKey1 !== "A") show = false;
+      if (b && rowKey1 !== "B") show = false;
+      if (c && rowKey1 !== "C") show = false;
+      if (d && rowKey1 !== "D") show = false;
+      if (e && rowKey1 !== "E") show = false;
+      if (f && rowKey1 !== "F") show = false;
+      if (g && rowKey1 !== "G") show = false;
+      if (h && rowKey1 !== "H") show = false;
+      if (i && rowKey1 !== "I") show = false;
+      if (j && rowKey1 !== "J") show = false;
+      if (k && rowKey1 !== "K") show = false;
+      if (l && rowKey1 !== "L") show = false;
+      if (m && rowKey1 !== "M") show = false;
+      if (n && rowKey1 !== "N") show = false;
+      if (o && rowKey1 !== "O") show = false;
+      if (p && rowKey1 !== "P") show = false;
+      if (q && rowKey1 !== "Q") show = false;
+      if (r && rowKey1 !== "R") show = false;
+      if (s && rowKey1 !== "S") show = false;
+      if (t && rowKey1 !== "T") show = false;
+      if (u && rowKey1 !== "U") show = false;
+      if (v && rowKey1 !== "V") show = false;
+      if (w && rowKey1 !== "W") show = false;
+      if (x && rowKey1 !== "X") show = false;
+      if (y && rowKey1 !== "Y") show = false;
+      if (z && rowKey1 !== "Z") show = false;
+      if (home && rowKey1 !== "Home") show = false;
+      if (end && rowKey1 !== "End") show = false;
+      if (pageup && rowKey1 !== "PageUp") show = false;
+      if (pagedown && rowKey1 !== "PageDown") show = false;
+      if (leftarrow && rowKey1 !== "←") show = false;
+      if (uparrow && rowKey1 !== "↑") show = false;
+      if (rightarrow && rowKey1 !== "→") show = false;
+      if (downarrow && rowKey1 !== "↓") show = false;
+      if (tab && rowKey1 !== "Tab") show = false;
+      if (space && rowKey1 !== "Space") show = false;
+      if (enter && rowKey1 !== "Enter") show = false;
+      if (convert && rowKey1 !== "変換") show = false;
+      if (nonconvert && rowKey1 !== "無変換") show = false;
+      
+      if (minus && rowKey1 != "－") show = false;
+      if (caret && rowKey1 != "＾") show = false;
+      if (at && rowKey1 != "＠") show = false;
+      if (leftbracket && rowKey1 != "［") show = false;
+      if (rightbracket && rowKey1 != "］") show = false;
+      if (semicolon && rowKey1 != "；") show = false;
+      if (colon && rowKey1 != "：") show = false;
+      if (comma && rowKey1 != "，") show = false;
+      if (dot && rowKey1 != "．") show = false;
+      if (slash && rowKey1 != "／") show = false;
+      if (backslash && rowKey1 != "￥") show = false;
+      
+      //App
+      if (appInput === "Windows" && rowApp !== "Windows") show = false;
+      if (appInput === "VSCode" && rowApp !== "VSCode") show = false;
+
+      //重要度
+      if (importance === "star" && rowImportance !== "★") show = false;
+      if (importance === "none" && rowImportance === "★") show = false;
+
+      //修得状況
+      if (status === "checked" && rowStatus !== "✓") show = false;
+      if (status === "none" && rowStatus === "✓") show = false;
+
+      if (show) {
+        row.classList.remove("hidden");
+      } else {
+        row.classList.add("hidden");
+      }
+    });
+  }
+
+document.addEventListener("keydown", (e) => {
+  switch (e.key.toLowerCase()) {
+    case "nonconvert":
+      toggleCheckbox("none");
+      break;
+    case "control":
+      toggleCheckbox("ctrl");
+      break;
+    case "shift":
+      toggleCheckbox("shift");
+      break;
+    case "alt":
+      toggleCheckbox("alt");
+      break;
+    case "meta": // Windowsキーは "meta" として扱われます
+      toggleCheckbox("win");
+      break;
+
+      case "f1": 
+      toggleCheckbox("f1"); 
+      break;
+      case "f2": 
+      toggleCheckbox("f2"); 
+      break;
+      case "f3": 
+      toggleCheckbox("f3"); 
+      break;
+      case "f4": 
+      toggleCheckbox("f4"); 
+      break;
+      case "f5": 
+      toggleCheckbox("f5"); 
+      break;
+      case "f6": 
+      toggleCheckbox("f6"); 
+      break;
+      case "f7": 
+      toggleCheckbox("f7"); 
+      break;
+      case "f8": 
+      toggleCheckbox("f8"); 
+      break;
+      case "f9": 
+      toggleCheckbox("f9"); 
+      break;
+      case "f10": 
+      toggleCheckbox("f10"); 
+      break;
+      case "f11": 
+      toggleCheckbox("f11"); 
+      break;
+      case "f12": 
+      toggleCheckbox("f12"); 
+      break;
+      case "1": 
+      toggleCheckbox("1"); 
+      break;
+      case "2": 
+      toggleCheckbox("2"); 
+      break;
+      case "3": 
+      toggleCheckbox("3"); 
+      break;
+      case "4": 
+      toggleCheckbox("4"); 
+      break;
+      case "5": 
+      toggleCheckbox("5"); 
+      break;
+      case "6": 
+      toggleCheckbox("6"); 
+      break;
+      case "7": 
+      toggleCheckbox("7"); 
+      break;
+      case "8": 
+      toggleCheckbox("8"); 
+      break;
+      case "9": 
+      toggleCheckbox("9"); 
+      break;
+      case "0": 
+      toggleCheckbox("0"); 
+      break;
+      case "a": 
+      toggleCheckbox("a"); 
+      break;
+      case "b": 
+      toggleCheckbox("b"); 
+      break;
+      case "c": 
+      toggleCheckbox("c"); 
+      break;
+      case "d": 
+      toggleCheckbox("d"); 
+      break;
+      case "e": 
+      toggleCheckbox("e"); 
+      break;
+      case "f": 
+      toggleCheckbox("f"); 
+      break;
+      case "g": 
+      toggleCheckbox("g"); 
+      break;
+      case "h": 
+      toggleCheckbox("h"); 
+      break;
+      case "i": 
+      toggleCheckbox("i"); 
+      break;
+      case "j": 
+      toggleCheckbox("j"); 
+      break;
+      case "k": 
+      toggleCheckbox("k"); 
+      break;
+      case "l": 
+      toggleCheckbox("l"); 
+      break;
+      case "m": 
+      toggleCheckbox("m"); 
+      break;
+      case "n": 
+      toggleCheckbox("n"); 
+      break;
+      case "o": 
+      toggleCheckbox("o"); 
+      break;
+      case "p": 
+      toggleCheckbox("p"); 
+      break;
+      case "q": 
+      toggleCheckbox("q"); 
+      break;
+      case "r": 
+      toggleCheckbox("r"); 
+      break;
+      case "s": 
+      toggleCheckbox("s"); 
+      break;
+      case "t": 
+      toggleCheckbox("t"); 
+      break;
+      case "u": 
+      toggleCheckbox("u"); 
+      break;
+      case "v": 
+      toggleCheckbox("v"); 
+      break;
+      case "w": 
+      toggleCheckbox("w"); 
+      break;
+      case "x": 
+      toggleCheckbox("x"); 
+      break;
+      case "y": 
+      toggleCheckbox("y"); 
+      break;
+      case "z": 
+      toggleCheckbox("z"); 
+      break;
+      
+      case "-": 
+      toggleCheckbox("minus"); 
+      break;
+      case "^": 
+      toggleCheckbox("caret"); 
+      break;
+      case "@": 
+      toggleCheckbox("at"); 
+      break;
+      case "[": 
+      toggleCheckbox("leftbracket"); 
+      break;
+      case "]": 
+      toggleCheckbox("rightbracket"); 
+      break;
+      case ";": 
+      toggleCheckbox("semicolon"); 
+      break;
+      case ":": 
+      toggleCheckbox("colon"); 
+
+      break;
+      case ",": 
+      toggleCheckbox("comma"); 
+      break;
+      case ".": 
+      toggleCheckbox("dot"); 
+      break;
+      case "/": 
+      toggleCheckbox("slash"); 
+      break;
+      case "\\": 
+      toggleCheckbox("backslash"); 
+      break;
+  }
+
+  if (currentFilter === "app") {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      cycleSelect("app-filter", e.key === "ArrowUp" ? -1 : 1);
+    }
+  } else if (currentFilter === "importance") {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      cycleSelect("importance-filter", e.key === "ArrowUp" ? -1 : 1);
+    }
+  } else if (currentFilter === "status") {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      cycleSelect("status-filter", e.key === "ArrowUp" ? -1 : 1);
+    }
+  }
+
+    if (e.key === "Convert") {
+      cycleFilterMode();
+    }
+  });
+
+  function toggleCheckbox(id) {
+    const checkbox = document.getElementById(id);
+    checkbox.checked = !checkbox.checked;
+    filter(); // フィルタリングを再実行
+  }
+
+  function cycleFilterMode() {
+    const filterModes = ["key", "app", "importance", "status"];
+    const currentIndex = filterModes.indexOf(currentFilter);
+    currentFilter = filterModes[(currentIndex + 1) % filterModes.length];
+    document.getElementById("status").innerText = `検索モード：${currentFilter}`;
+  }
+
+  function cycleSelect(selectId, direction) {
+    const select = document.getElementById(selectId);
+    const options = Array.from(select.options);
+    const currentIndex = options.findIndex(option => option.selected);
+    const newIndex = (currentIndex + direction + options.length) % options.length;
+    select.selectedIndex = newIndex;
+    filter();
+  }
+
+</script>
+
+</body>
+</html>
